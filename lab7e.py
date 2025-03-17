@@ -7,12 +7,22 @@ class Time:
                             time_to_sec, format_time,
                             change_time, sum_time
     """
+
     def __init__(self,hour=12,minute=0,second=0):
         """constructor for time object""" 
         self.hour = hour
         self.minute = minute
         self.second = second
 
+    def __str__(self):
+        '''return a string representation for the object self'''
+        return f'{self.hour:02d}:{self.minute:02d}:{self.second:02d}'
+    
+    def __repr__(self):
+        '''return a string representation for the object self'''
+        '''just instead of ':', you are required use the '.'  in the formatting string.'''
+        return f'{self.hour:02d}.{self.minute:02d}.{self.second:02d}'
+    
     def format_time(self):
         """Return time object (t) as a formatted string"""
         return f'{self.hour:02d}:{self.minute:02d}:{self.second:02d}'
